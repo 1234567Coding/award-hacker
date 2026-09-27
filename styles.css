@@ -16,6 +16,26 @@
 
 * { box-sizing: border-box; }
 
+/* ---------- accessibility ---------- */
+.skip-link {
+  position: absolute;
+  left: 1rem; top: -4rem;
+  background: var(--accent-dark);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0 0 10px 10px;
+  z-index: 100;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 0; color: #fff; }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 body {
   margin: 0;
   color: var(--ink);
@@ -119,6 +139,19 @@ img, svg { max-width: 100%; height: auto; }
 .hero .tagline { font-size: 1.25rem; font-weight: 600; margin: 0 0 0.75rem; color: #eef7f5; }
 .hero .pitch { max-width: 38rem; color: #d7e8e4; margin: 0; }
 .hero .pitch + .pitch { margin-top: 0.5rem; }
+.hero .cta-row { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.hero .btn { background: #ffd98a; color: #0b3f38; }
+.hero .btn:hover { background: #fff; color: #0b3f38; }
+.hero .btn-ghost {
+  display: inline-block;
+  border: 2px solid rgba(255,255,255,0.55);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+}
+.hero .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
 
 /* ---------- layout ---------- */
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 1.25rem; }
@@ -146,6 +179,19 @@ img, svg { max-width: 100%; height: auto; }
   transition: transform .12s ease, box-shadow .12s ease;
 }
 .card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(10,60,52,0.10); }
+.card-art {
+  margin: -1.4rem -1.4rem 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.card-art svg { width: 38px; height: 38px; opacity: 0.95; }
+.art-foundations { background: linear-gradient(120deg, #0e7a6b, #0a5c51 55%, #083f37); }
+.art-earning     { background: linear-gradient(120deg, #c98a1b, #9d6712 55%, #7a4f0d); }
+.art-redeeming   { background: linear-gradient(120deg, #14506b, #0e3b50 55%, #0a2a39); }
 .card .pill {
   align-self: flex-start;
   font-size: 0.72rem;
